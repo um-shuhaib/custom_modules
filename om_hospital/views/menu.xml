@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="hospital_menu_root"
+        name="HMS"
+        />
+
+    <menuitem
+        id="hospital_menu_sub"
+        name="front_desk"
+        parent="hospital_menu_root"/>
+
+    <menuitem
+        id="hospital_menu_subsub"
+        name="patient"
+        parent="hospital_menu_sub" 
+        action="action_hospital_patient" />
+    <menuitem
+        id="hospital_readonly_menu"
+        name="patient view"
+        parent="hospital_menu_sub" 
+        action="action_hospital_patient_readonly" />
+
+    <menuitem
+        id="hospital_appointment_menu"
+        name="appointment view"
+        parent="hospital_menu_sub" 
+        action="action_hospital_appointment" />
+
+
+
+</odoo>

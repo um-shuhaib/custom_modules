@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="portal_my_home" inherit_id="portal.portal_my_home">
+        <xpath expr="//div[@id='portal_vendor_category']" position="after">
+        <!-- <xpath expr="//div[contains(@id,'portal_vendor_category')]" position="after"> -->
+            <div class="o_portal_category row g-2 mt-3" id="portal_test_category">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/portal/static/src/img/portal-addresses.svg'"/>
+                            <t t-set="title">Addresses Test</t>
+                            <t t-set="text">Add, remove or modify your addresses</t>
+                            <t t-set="url" t-value="'/my/addressesTest'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/portal/static/src/img/portal-connection.svg'"/>
+                            <t t-set="title">Connection Test</t>
+                            <t t-set="text">Configure your connection parameters</t>
+                            <t t-set="url" t-value="'/my/securityTest'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                    </div>
+
+        </xpath>
+        <xpath expr="//div[@id='portal_common_category']" position="after">
+        <!-- <xpath expr="//div[contains(@class,'o_portal_category')]" position="inside"> -->
+            <div class="o_portal_category row g-2 mt-3" id="portal_test_category">
+                        <t t-call="portal.portal_docs_entry">
+                            <t t-set="icon" t-value="'/portal/static/src/img/portal-addresses.svg'"/>
+                            <t t-set="title">Patients</t>
+                            <t t-set="text">Add, remove or modify your Patients</t>
+                            <t t-set="url" t-value="'/my/test'"/>
+                            <t t-set="config_card" t-value="True"/>
+                        </t>
+                       
+                    </div>
+
+        </xpath>
+
+    </template>
+
+
+
+<template id="test_portal_list_view">
+    <t t-call="portal.portal_layout">
+
+        <t t-call="portal.portal_table">
+            <tr class="active">
+                <th class="text-center">Name</th>
+                <th class="text-center">Place</th>
+            </tr>
+            <tr>
+                <t t-foreach="patient" t-as="patient">
+                <tr>
+                    <td class="text-center" t-out="patient.name"></td>
+                    <td class="text-center" t-out="patient.age"></td>
+                </tr>
+                    
+                </t>
+            </tr>
+
+        </t>
+
+    </t>
+</template>
+
+</odoo>

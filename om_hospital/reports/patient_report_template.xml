@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <template id="custom_header_layout">
+        <t t-set="company" t-value="0.company_id" />
+
+        <div class="header row">
+            <div class="col-6" style="report_header_style">
+                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height=90px;" />
+            </div>
+            <div class="col-6" style="report_header_style">
+                <strong t-esc="company.name" />
+                <br/>
+                <span t-esc="company.city" />
+                <br/>
+                <span t-esc="company.zip" />
+                <br/>
+            </div>
+
+            <hr/>
+
+
+            <div class="row">
+                <div class="col-6">
+                    <p>Name: <span t-field="patient.name" />
+                    </p>
+                    <p>DOB: <span t-field="patient.date_of_birth" />
+                    </p>
+                </div>
+                <div class="col-6">
+                    <p>Age: <span t-field="patient.age" />
+                    </p>
+                    <p>Gender: <span t-field="patient.gender" />
+                    </p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </template>
+
+
+
+    <template id="report_patient_template">
+        <t t-foreach="docs" t-as="patient">
+            <t t-call="web.html_container">
+                <!-- <t t-call="web.external_layout"> -->
+                    <div class="page">
+                        <t t-set="company" t-value="patient.company_id" />
+
+                        <div class="header row">
+                            <div class="col-6" >
+                                <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height:90px;" />
+                            </div>
+                            <div class="col-6" style="text-align:right;">
+                                <strong t-esc="company.name" />
+                                <br/>
+                                <span t-esc="company.city" />
+                                <br/>
+                                <span t-esc="company.zip" />
+                                <br/>
+                            </div>
+
+                            <hr/>
+
+
+                           
+
+
+
+                        </div>
+                        <hr/>
+
+                         <div class="row">
+                                <div class="col-6">
+                                    <p>Name: <span t-field="patient.name" />
+                                    </p>
+                                    <p>DOB: <span t-field="patient.date_of_birth" />
+                                    </p>
+                                </div>
+                                <div class="col-6">
+                                    <p>Age: <span t-field="patient.age" />
+                                    </p>
+                                    <p>Gender: <span t-field="patient.gender" />
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="patient.product_ids" t-as="product">
+                                    <tr>
+                                        <td>
+                                            <span t-field="product.product_id" />
+                                        </td>
+                                        <td>
+                                            <span t-field="product.quantity" />
+                                        </td>
+                                    </tr>
+
+                                </t>
+                                <!-- <t t-set="offers" t-value="patient.mapped('offer_ids')"/>
+                                <tr t-foreach="offers" t-as="offer">
+                                    <td>
+                                        <span t-field="offer.price"/>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                <!-- </t> -->
+            </t>
+        </t>
+    </template>
+</odoo>
+
+

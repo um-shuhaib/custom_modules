@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="driver_menu"
+        name="DRIVER"
+        />
+
+    <menuitem
+        id="garage_menu"
+        name="Garage"
+        parent="driver_menu"
+        />
+
+    <menuitem
+        id="user_menu"
+        name="User"
+        parent="garage_menu"
+        action="driver_action"
+        />
+
+    <menuitem
+        id="gender_menu"
+        name="Gender"
+        parent="driver_menu"
+        action="driver_action"
+        />
+
+    
+    <menuitem
+        id="male_menu"
+        name="Male "
+        parent="gender_menu"
+        action="action_male_view"
+        />
+
+    <menuitem
+        id="female_menu"
+        name="Female "
+        parent="gender_menu"
+        action="action_female_view"
+        />
+
+
+
+</odoo>
