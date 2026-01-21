@@ -19,6 +19,7 @@
         "views/portal_template.xml",
         "reports/report.xml",
         "reports/patient_report_template.xml",
+        "wizards/wizard_view.xml",
         
        
     ],

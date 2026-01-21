@@ -23,3 +23,7 @@ class HospitalPatient(models.Model):
                 patient.age=age
             else:
                 patient.age="not provided"
+
+    def action_newPatient(self):
+        action_ref = self.env.ref('om_hospital.wizard_addPatient_action').read()[0]
+        return action_ref

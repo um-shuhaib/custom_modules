@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="wizard_addPatient_view" model="ir.ui.view">
+        <field name="name">wizar for patient</field>
+        <field name="model">hospital.new.patient</field>
+        <field name="arch" type='xml'>
+            <form>
+                <group>
+                    <group>
+                        <field name="name" />
+                        <field name="bdate" />
+                    </group>
+                    <group>
+                        <field name="age" />
+                        <field name="gender" />
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="wizard_addPatient_action" model="ir.actions.act_window">
+        <field name="name">wizard action for patient</field>
+        <field name="res_model">hospital.new.patient</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>  <!-- for the popup  -->
+    </record>
+
+</odoo>
