@@ -27,6 +27,8 @@
         <field name="res_model">hospital.new.patient</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>  <!-- for the popup  -->
+        <field name="binding_model_id" ref='om_hospital.hospital.patient' />
+        <field name="binding_view_types">list,form</field>
     </record>
 
 </odoo>

@@ -7,3 +7,6 @@ class AddPatient(models.TransientModel):
     age=fields.Char(string="Age")
     bdate=fields.Char(string="Date of Birth")
     gender=fields.Char(string="Gender")
+
+
+    
