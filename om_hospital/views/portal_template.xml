@@ -3,37 +3,37 @@
 
     <template id="portal_my_home" inherit_id="portal.portal_my_home">
         <xpath expr="//div[@id='portal_vendor_category']" position="after">
-        <!-- <xpath expr="//div[contains(@id,'portal_vendor_category')]" position="after"> -->
+            <!-- <xpath expr="//div[contains(@id,'portal_vendor_category')]" position="after"> -->
             <div class="o_portal_category row g-2 mt-3" id="portal_test_category">
-                        <t t-call="portal.portal_docs_entry">
-                            <t t-set="icon" t-value="'/portal/static/src/img/portal-addresses.svg'"/>
-                            <t t-set="title">Addresses Test</t>
-                            <t t-set="text">Add, remove or modify your addresses</t>
-                            <t t-set="url" t-value="'/my/addressesTest'"/>
-                            <t t-set="config_card" t-value="True"/>
-                        </t>
-                        <t t-call="portal.portal_docs_entry">
-                            <t t-set="icon" t-value="'/portal/static/src/img/portal-connection.svg'"/>
-                            <t t-set="title">Connection Test</t>
-                            <t t-set="text">Configure your connection parameters</t>
-                            <t t-set="url" t-value="'/my/securityTest'"/>
-                            <t t-set="config_card" t-value="True"/>
-                        </t>
-                    </div>
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="icon" t-value="'/portal/static/src/img/portal-addresses.svg'"/>
+                    <t t-set="title">Addresses Test</t>
+                    <t t-set="text">Add, remove or modify your addresses</t>
+                    <t t-set="url" t-value="'/my/addressesTest'"/>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="icon" t-value="'/portal/static/src/img/portal-connection.svg'"/>
+                    <t t-set="title">Connection Test</t>
+                    <t t-set="text">Configure your connection parameters</t>
+                    <t t-set="url" t-value="'/my/securityTest'"/>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+            </div>
 
         </xpath>
         <xpath expr="//div[@id='portal_common_category']" position="after">
-        <!-- <xpath expr="//div[contains(@class,'o_portal_category')]" position="inside"> -->
+            <!-- <xpath expr="//div[contains(@class,'o_portal_category')]" position="inside"> -->
             <div class="o_portal_category row g-2 mt-3" id="portal_test_category">
-                        <t t-call="portal.portal_docs_entry">
-                            <t t-set="icon" t-value="'/portal/static/src/img/portal-addresses.svg'"/>
-                            <t t-set="title">Patients</t>
-                            <t t-set="text">Add, remove or modify your Patients</t>
-                            <t t-set="url" t-value="'/my/test'"/>
-                            <t t-set="config_card" t-value="True"/>
-                        </t>
-                       
-                    </div>
+                <t t-call="portal.portal_docs_entry">
+                    <t t-set="icon" t-value="'/portal/static/src/img/portal-addresses.svg'"/>
+                    <t t-set="title">Patients</t>
+                    <t t-set="text">Add, remove or modify your Patients</t>
+                    <t t-set="url" t-value="'/my/patients'"/>
+                    <t t-set="config_card" t-value="True"/>
+                </t>
+
+            </div>
 
         </xpath>
 
@@ -41,27 +41,119 @@
 
 
 
-<template id="test_portal_list_view">
-    <t t-call="portal.portal_layout">
 
-        <t t-call="portal.portal_table">
-            <tr class="active">
-                <th class="text-center">Name</th>
-                <th class="text-center">Place</th>
-            </tr>
-            <tr>
-                <t t-foreach="patient" t-as="patient">
-                <tr>
-                    <td class="text-center" t-out="patient.name"></td>
-                    <td class="text-center" t-out="patient.age"></td>
-                </tr>
-                    
-                </t>
-            </tr>
+    <template id="test_portal_list_view">
+        <t t-call="portal.portal_layout">
+            <t t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Place</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="patient" t-as="patient">
+                        <tr>
+                            <td class="text-center">
+                                <a t-attf-href="/my/patients/#{patient.id}">
+                                    <t t-out="patient.name" />
+                                </a>
+
+                            </td>
+
+                            <td class="text-center" t-out="patient.age"></td>
+                        </tr>
+
+                    </t>
+                </tbody>
+
+            </t>
+
+        </t>
+    </template>
+
+
+    <template id="portal_breadcrumbs" inherit_id="portal.portal_breadcrumbs">
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li class="breadcrumb-item" t-if="page_name == 'patients'">
+                <span>Patients</span>
+            </li>
+            <li class="breadcrumb-item" t-if="page_name == 'patient_form'">
+                <a href="/my/patients">Patients /</a>
+
+                <span t-out="patient.name" />
+                <!-- <span >Patient details</span> -->
+            </li>
+        </xpath>
+
+    </template>
+
+
+
+
+    <!-- <template id="test_portal_form_view" inherit_id="portal.portal_sidebar">  -->
+    <template id="test_portal_form_view">
+
+        <t t-call="portal.portal_layout">
+            <t t-call="om_hospital.model_name_view_form"/>
+            <div>
+                <p t-out="patient.name" />
+                <p t-out="patient.age" />
+                <p t-out="patient.gender" />
+            </div>
+            <div>
+                <form action="" method="POST">
+                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                    <t t-call="portal.portal_table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr t-foreach="patient.product_ids" t-as="p">
+                                <td t-out="p.product_id.name"></td>
+                                <td t-out="p.quantity"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <select name="product_id" class="form-select">
+                                        <t t-foreach="request.env['product.product'].sudo().search([])" t-as="product">
+                                            <option t-att-value="product.id" t-out="product.name"/>
+                                        </t>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="number" name="qty" />
+                                </td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary">Add Product</button>
+                                    <!-- <input type="submit" /> -->
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </t>
+                </form>
+
+
+            </div>
 
         </t>
 
-    </t>
-</template>
+
+    </template>
+
+
+
+
+
+
+
+
+
+
 
 </odoo>

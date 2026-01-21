@@ -8,7 +8,7 @@
     # "category": "Education",
     # "website": "https://www.tecfuge.com",
     "depends": [
-        "mail","product","portal"
+        "mail","product","portal","sale_management"
         ],
     "data": [
         "security/ir.model.access.csv",
