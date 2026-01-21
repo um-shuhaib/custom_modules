@@ -21,15 +21,19 @@ class TestPortal(CustomerPortal):
         print()
         values = self._prepare_portal_layout_values()
         total=len(patient_id.product_ids)
+        step=3
         pager=portal_page(
             url=f'/my/patients/{patient_id.id}',
             total=total,
-            step=3,
+            step=step,
             page=page
 
         )
+        offset=(page - 1) * step 
+        paged_products=patient_id.product_ids[offset : offset + step]
         values.update({
             'patient': patient_id,
+            'paged_products':paged_products,
             'page_name': 'patient_form',
             'pager':pager
         })

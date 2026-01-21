@@ -113,7 +113,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr t-foreach="patient.product_ids" t-as="p">
+                            <!-- <tr t-foreach="patient.product_ids" t-as="p"> -->
+                            <tr t-foreach="paged_products" t-as="p">
                                 <td t-out="p.product_id.name"></td>
                                 <td t-out="p.quantity"></td>
                             </tr>
