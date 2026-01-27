@@ -5,7 +5,9 @@
         <field name="name">hospital.appointment.list</field>
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
-            <list editable="bottom">
+            <!-- <list editable="bottom"> -->
+            <list>
+                <field name="reference" ></field>
                 <field name="patient_id" ></field>
                 <field name="date_appointment" ></field>
                 <field name="note" ></field>
@@ -22,7 +24,8 @@
             <form>
                 <sheet>
                     <group name="appointment" string="string">
-                        <field name="patient_id"></field>
+                        <field name="reference" readonly='True' ></field>
+                        <field name="patient_id" widget='selection'></field>
                         <field name="date_appointment" ></field>
                         <field name="note" ></field>
                     </group>
