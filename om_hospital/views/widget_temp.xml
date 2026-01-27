@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="widget_form_view" model="ir.ui.view">
+        <field name='name' >patient.widget.form</field>
+        <field name='model' >patient.widget</field>
+        <field name='arch' type='xml'>
+            <form string="Text Widgets">
+                <sheet>
+                    <group>
+                        <group string='char'>
+                            <field name='name' widget='badge'></field>
+                            <field name='name' widget='CopyClipboardChar'></field>
+                            <field name='name' widget='email'></field>
+                            <field name='name' widget='phone'></field>
+                            <field name='name' widget='url'></field>
+                            <field name='name' widget='password'></field>
+                        </group>
+                        <group string="text">
+                            <field name="address"></field>
+                            <field name="address" widget='CopyClipboardChar'></field>
+                            <field name="address" widget='CopyClipboardButton'></field>
+                        </group>
+                        <group string="Integer">
+                            <field name="age"></field>
+                            <field name="age" widget='percentpie'></field>
+                            <field name="age" widget='progressbar'></field>
+                            <field name="age" widget='handle'></field>
+                        </group>
+                        <group string="decimal">
+                            <field name="decimal" ></field>
+                            <field name="decimal" widget='monetary'></field>
+                            <field name="decimal" widget='percentage'></field>
+                            <field name="decimal" widget='float_time'></field>
+                        </group>
+                        <group string="date">
+                            <field name="Date"></field>
+                            <field name="Date" widget='remaining_days'></field>
+                        </group>
+                        <group string="dataTime">
+                            <field name="DateTime"></field>
+                            <field name="DateTime" widget='remaining_days'></field>
+                            <field name="DateTime" widget='daterange'></field>
+                        </group>
+                        <group string="checkbox">
+                            <!-- <field name='status' ></field> -->
+                            <field name='status' widget='button'></field>
+                            <field name='status' widget='boolean_toggle'></field>
+                            <field name='pdf' widget='pdf_viewer'></field>
+                        </group>
+                        <group string="Selections">
+                            <field name="stage"></field>
+                            <field name="stage" widget='selection_badge'></field>
+                            <field name="stage" widget='badges'></field>
+                            <field name="stage" widget='priority'></field>
+                            <field name="stage" widget='radio'></field>
+                            <field name="stage" widget='statusbar'></field>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="patient_widget_view_tree" model="ir.ui.view">
+        <field name="name">patient.widget.view.tree</field>
+        <field name="model">patient.widget</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" class="text-danger"></field>
+                <field name="address"></field>
+                <field name="age" ></field>
+                <field name="decimal"></field>
+                <field name="Date"></field>
+                <field name="DateTime"></field>
+                <field name="status"></field>
+                <field name="stage" widget='badge' decoration-danger="stage=='bad'" decoration-success="stage=='good'"></field>
+                <field name="pdf"></field>
+            </list>
+        </field>
+    </record>
+
+
+    
+
+    <record id='action_widget_patient_view' model='ir.actions.act_window'>
+        <field name='name'>Patient widgets</field>
+        <field name='res_model'>patient.widget</field>
+        <field name='view_mode'>list,form,graph,pivot</field>
+
+    </record>
+
+</odoo>

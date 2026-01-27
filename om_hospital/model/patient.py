@@ -5,6 +5,7 @@ class HospitalPatient(models.Model):
     _name="hospital.patient"
     _inherit=['mail.thread']    #add mail in depents id manifest
     _description="Patient Master"
+    _rec_name='name'
 
     name=fields.Char(string="Name",required=True , tracking=True)
     date_of_birth=fields.Date(string="Date Of Birth",required=True)

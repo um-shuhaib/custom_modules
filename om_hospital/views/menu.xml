@@ -28,6 +28,11 @@
         parent="hospital_menu_sub" 
         action="action_hospital_appointment" />
 
+    <menuitem
+        id="widget_menu"
+        name="widget view"
+        parent="hospital_menu_root" 
+        action="action_widget_patient_view" />
 
 
 </odoo>

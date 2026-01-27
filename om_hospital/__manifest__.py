@@ -15,11 +15,12 @@
         "views/appoinment_view.xml",
         "views/patient_readonly_view.xml",
         "views/patient_view.xml",
+        "views/widget_temp.xml",
         "views/menu.xml",
         "views/portal_template.xml",
         "reports/report.xml",
         "reports/patient_report_template.xml",
-        "wizards/wizard_view.xml",
+        # "wizards/wizard_view.xml",
         
        
     ],

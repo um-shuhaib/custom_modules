@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
     <record id="wizard_addPatient_view" model="ir.ui.view">
@@ -26,9 +26,9 @@
         <field name="name">wizard action for patient</field>
         <field name="res_model">hospital.new.patient</field>
         <field name="view_mode">form</field>
-        <field name="target">new</field>  <!-- for the popup  -->
+        <field name="target">new</field>
         <field name="binding_model_id" ref='om_hospital.hospital.patient' />
         <field name="binding_view_types">list,form</field>
     </record>
 
-</odoo>
+</odoo> -->
