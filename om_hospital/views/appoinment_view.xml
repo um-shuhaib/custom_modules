@@ -24,7 +24,8 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <field name="state" widget='statusbar' options="{'clickable':'1'}"></field>
+                    <button string="Confirm" name="action_confirm" type="object"/>
+                    <field name="state" widget='statusbar'></field>
                 </header>
                 <sheet>
                     <group name="appointment" string="string">

@@ -12,7 +12,7 @@ class HospitalPatient(models.Model):
     note=fields.Text(string="Note")
     state=fields.Selection([
         ('draft','draft'),('confirmed','confirmed'),('ongoing','ongoing'),('done','done'),('cancelled','cancelled')
-        ],default='draft', tracking=True)
+        ],default='draft')
 
     
     @api.model_create_multi
@@ -22,6 +22,10 @@ class HospitalPatient(models.Model):
             if not val.get('reference') or val['reference'] == 'New':
                 val['reference'] = self.env['ir.sequence'].next_by_code('hospital.appointment')
         return super().create(vals_list)
+    
+    def action_confirm(self):
+        for rec in self:
+            rec.state='confirmed'
 
 
 
