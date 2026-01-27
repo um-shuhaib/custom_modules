@@ -10,6 +10,9 @@ class HospitalPatient(models.Model):
     patient_id=fields.Many2one('hospital.patient',string="Patient",required=True)
     date_appointment=fields.Date(string="Date")
     note=fields.Text(string="Note")
+    state=fields.Selection([
+        ('draft','draft'),('confirmed','confirmed'),('ongoing','ongoing'),('done','done'),('cancelled','cancelled')
+        ],default='draft', tracking=True)
 
     
     @api.model_create_multi
