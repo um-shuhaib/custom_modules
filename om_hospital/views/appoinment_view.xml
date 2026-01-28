@@ -24,7 +24,11 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button string="Confirm" name="action_confirm" type="object"/>
+                    <button class="btn-primary" string="Confirm" name="action_confirm" type="object"/>
+                    <button  string="Ongoing" name="action_ongoing" type="object"/>
+                    <button  string="Done" name="action_done" type="object"/>
+                    <button class="btn-danger" string="Cancel" name="action_cancel" type="object"/>
+                    <button  string="Reset" name="action_draft" type="object"/>
                     <field name="state" widget='statusbar'></field>
                 </header>
                 <sheet>

@@ -23,9 +23,18 @@ class HospitalPatient(models.Model):
                 val['reference'] = self.env['ir.sequence'].next_by_code('hospital.appointment')
         return super().create(vals_list)
     
+    def action_draft(self):
+        self.state='draft'
+
     def action_confirm(self):
-        for rec in self:
-            rec.state='confirmed'
+        self.state='confirmed'
 
+    def action_ongoing(self):
+        self.state='ongoing'
 
+    def action_done(self):
+        self.state='done'
+
+    def action_cancel(self):
+        self.state='cancelled'
 
