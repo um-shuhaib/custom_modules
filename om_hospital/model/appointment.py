@@ -11,7 +11,7 @@ class HospitalPatient(models.Model):
     date_appointment=fields.Date(string="Date")
     note=fields.Text(string="Note")
     state=fields.Selection([
-        ('draft','draft'),('confirmed','confirmed'),('ongoing','ongoing'),('done','done'),('cancelled','cancelled')
+        ('draft','draft'),('ongoing','ongoing'),('confirmed','confirmed'),('done','done'),('cancelled','cancelled')
         ],default='draft')
 
     
