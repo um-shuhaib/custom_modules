@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="owl_menu_root"
+        name="OWL"
+        action="action_todo_details"
+        />
+
+    <menuitem
+            id="owl_menu"
+            name="Counter"
+            parent="owl_menu_root" 
+            action="action_todo_owl" />
+
+</odoo>

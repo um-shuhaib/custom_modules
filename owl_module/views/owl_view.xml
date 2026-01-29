@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="todo_detais_view_list" model="ir.ui.view">
+        <field name="name">todo.details.list</field>
+        <field name="model">todo.details</field>
+        <field name="arch" type="xml">
+            <list >
+                <field name="name"></field>
+                
+
+
+
+            </list>
+        </field>
+    </record>
+
+
+    <record id="todo_details_form" model="ir.ui.view">
+        <field name="name">todo.details.form</field>
+        <field name="model">todo.details</field>
+        <field name="arch" type="xml">
+            <form>
+
+               
+                <sheet>
+                    <group name="name" string="string">
+                        <group>
+                            <field name="name"></field>
+
+                        </group>
+                        
+                    </group>
+
+                    
+                </sheet>
+                
+
+
+
+            </form>
+        </field>
+    </record>
+
+
+
+
+    <record id="action_todo_details" model="ir.actions.act_window">
+        <field name="name">Counter</field>
+        <field name="res_model">todo.details</field>
+        <field name="view_mode">list,form</field>
+        
+        <field name="help" type="html">
+            <p class="o_view_noncontent_smiling_face">
+        create a new Todo 
+            </p>
+        </field>
+    </record>
+
+
+
+
+    <record id="action_todo_owl" model="ir.actions.client">
+        <field name="name">todoList</field>
+        <field name="tag">owl_module.todo_list</field>
+        
+    </record>
+
+</odoo>

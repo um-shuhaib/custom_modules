@@ -2,7 +2,7 @@
 <!-- <?xml-stylesheet type="text/css" href="https://cdn.jsdelivr.net"?> -->
 
     <templates xml:space="preserved">
-        <t t-name="om_hospital.TodoList" owl="1">
+        <t t-name="owl_module.TodoList" owl="1">
             <div class="vh-100 d-flex flex-column justify-content-center align-items-center p-5 bg-dark">
                 <h1 class="text-center text-light">COUNTER</h1>
                 <div class="bg-secondary d-flex justify-content-center align-items-center">

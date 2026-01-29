@@ -1,7 +1,7 @@
 /** @odoo-module **/
 import {registry} from "@web/core/registry";
-// import { Component, useState } from "@odoo/owl";
-const {Component,useState} = owl;
+import { Component, useState } from "@odoo/owl";
+// const {Component,useState} = owl;
 
 export class NewField extends Component{
     setup(){
@@ -19,6 +19,6 @@ export class NewField extends Component{
 
 
     }
-NewField.template = 'om_hospital.TodoList'
+NewField.template = 'owl_module.TodoList'
 
-registry.category("actions").add("om_hospital.todo_list",NewField)
+registry.category("actions").add("owl_module.todo_list",NewField)

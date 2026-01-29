@@ -1,1 +1,1 @@
-from . import patient,appointment,product_line,widgets,owl_model
+from . import patient,appointment,product_line,widgets
