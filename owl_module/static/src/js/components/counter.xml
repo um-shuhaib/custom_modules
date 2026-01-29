@@ -3,7 +3,7 @@
 
     <templates xml:space="preserved">
         <t t-name="owl_module.TodoList" owl="1">
-            <div class="vh-100 d-flex flex-column justify-content-center align-items-center p-5 bg-dark">
+            <!-- <div class="vh-100 d-flex flex-column justify-content-center align-items-center p-5 bg-dark">
                 <h1 class="text-center text-light">COUNTER</h1>
                 <div class="bg-secondary d-flex justify-content-center align-items-center">
                     <button t-on-click="decrement"  class="btn btn-danger m-3"> - </button>
@@ -11,6 +11,18 @@
                     <button t-on-click="increment" class="btn btn-success m-3"> + </button>
                 </div>
             
+            </div> -->
+
+            <div class="row d-flex ">
+                <div class="p-5 vh-100 col-2 bg-primary">
+                    <ol>
+                        <t t-foreach="state.categories" t-as="category" t-key="category.id">
+                            <li t-esc="category.name"></li>
+                        </t>
+                    </ol>
+                </div>
+                <div class="vh-100 col-5 bg-secondary"></div>
+                <div class="vh-100 col-5 bg-light"></div>
             </div>
 
         </t>

@@ -9,7 +9,7 @@
 
     <menuitem
             id="owl_menu"
-            name="Counter"
+            name="Categories"
             parent="owl_menu_root" 
             action="action_todo_owl" />
 
