@@ -16,7 +16,7 @@ class TestPortal(CustomerPortal):
 
     
 
-    @http.route(['/my/patients/<model("hospital.patient"):patient_id>','/my/patients/<model("hospital.patient"):patient_id>/page/<int:page>'],website=True,type="http",method=['GET'])
+    @http.route(['/my/patients/<model("hospital.patient"):patient_id>','/my/patients/<model("hospital.patient"):patient_id>/page/<int:page>'],website=True,type="http",methods=['GET'])
     def TestPortalFormView(self,patient_id,page=1,**kw):
         print()
         values = self._prepare_portal_layout_values()
@@ -40,7 +40,7 @@ class TestPortal(CustomerPortal):
         return request.render('om_hospital.test_portal_form_view',values)
         # return request.render('om_hospital.test_portal_form_view',{'patient':patient_id})
 
-    @http.route(['/my/patients/<model("hospital.patient"):patient_id>'],website=True,type="http",method=['POST'],csrf=False)
+    @http.route(['/my/patients/<model("hospital.patient"):patient_id>'],website=True,type="http",methods=['POST'],csrf=False)
     def AddProductLine(self,patient_id,**post):
         patient=patient_id
         product_id=int(post.get("product_id"))

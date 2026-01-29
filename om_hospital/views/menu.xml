@@ -8,31 +8,36 @@
 
     <menuitem
         id="hospital_menu_sub"
-        name="front_desk"
+        name="Front Desk"
         parent="hospital_menu_root"/>
 
     <menuitem
         id="hospital_menu_subsub"
-        name="patient"
+        name="Patient"
         parent="hospital_menu_sub" 
         action="action_hospital_patient" />
     <menuitem
         id="hospital_readonly_menu"
-        name="patient view"
+        name="Patient View"
         parent="hospital_menu_sub" 
         action="action_hospital_patient_readonly" />
 
     <menuitem
         id="hospital_appointment_menu"
-        name="appointment view"
+        name="Appointment View"
         parent="hospital_menu_sub" 
         action="action_hospital_appointment" />
 
     <menuitem
         id="widget_menu"
-        name="widget view"
+        name="Widget View"
         parent="hospital_menu_root" 
         action="action_widget_patient_view" />
 
+    <menuitem
+        id="owl_menu"
+        name="OWL"
+        parent="hospital_menu_root" 
+        action="action_odo_owl" />
 
 </odoo>

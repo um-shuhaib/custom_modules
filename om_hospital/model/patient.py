@@ -11,6 +11,7 @@ class HospitalPatient(models.Model):
     date_of_birth=fields.Date(string="Date Of Birth",required=True)
     gender=fields.Selection([('male','male'),('female','female')],string="Gender")
     age=fields.Char(string="Age",compute="_get_patient_age")
+    single=fields.Boolean(string="Single",default=True)
     product_ids=fields.One2many('product.line','patient_id',string="product")
     company_id=fields.Many2one('res.company',string="Company",required=True,default=lambda self: self.env.company)
     # Other patient field)

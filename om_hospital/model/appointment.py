@@ -7,12 +7,12 @@ class HospitalPatient(models.Model):
     _rec_name='patient_id'
 
     reference=fields.Char(string='Reference', default='New')
-    patient_id=fields.Many2one('hospital.patient',string="Patient",required=True)
-    date_appointment=fields.Date(string="Date")
-    note=fields.Text(string="Note")
+    patient_id=fields.Many2one('hospital.patient',string="Patient",required=True,tracking=True)
+    date_appointment=fields.Date(string="Date",tracking=True)
+    note=fields.Text(string="Note",tracking=True)
     state=fields.Selection([
         ('draft','draft'),('ongoing','ongoing'),('confirmed','confirmed'),('done','done'),('cancelled','cancelled')
-        ],default='draft')
+        ],default='draft',tracking=True)
 
     
     @api.model_create_multi

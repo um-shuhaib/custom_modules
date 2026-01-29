@@ -44,8 +44,9 @@
                         </group>
                         <group string="checkbox">
                             <!-- <field name='status' ></field> -->
-                            <field name='status' widget='button'></field>
-                            <field name='status' widget='boolean_toggle'></field>
+                            <field name='status' widget='late_boolean'></field>
+                            <!-- <field name='status' widget='button'></field>
+                            <field name='status' widget='boolean_toggle'></field> -->
                             <field name='pdf' widget='pdf_viewer'></field>
                         </group>
                         <group string="Selections">
@@ -68,7 +69,7 @@
         <field name="model">patient.widget</field>
         <field name="arch" type="xml">
             <list>
-                <field name="name" class="text-danger"></field>
+                <field name="name" widget="new_text"></field>
                 <field name="address"></field>
                 <field name="age" ></field>
                 <field name="decimal"></field>

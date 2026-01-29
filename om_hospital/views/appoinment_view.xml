@@ -26,17 +26,20 @@
                 <header>
                     <button invisible="state != 'draft'"  string="Ongoing" name="action_ongoing" type="object"/>
                     <button invisible="state in ('confirmed','done','cancelled','draft')" class="btn-primary" string="Confirm" name="action_confirm" type="object"/>
-                    <button invisible="state in ('done','cancelled')" string="Done" name="action_done" type="object"/>
+                    <button invisible="state in ('draft','done','cancelled')" string="Done" name="action_done" type="object"/>
                     <button invisible="state in ('cancelled','draft')" class="btn-danger" string="Cancel" name="action_cancel" type="object"/>
                     <button invisible="state in ('draft','ongoing','confirmed','done')" string="Reset" name="action_draft" type="object"/>
                     <field name="state" widget='statusbar'></field>
                 </header>
                 <sheet>
-                    <group name="appointment" string="string">
+                    <group name="appointment" string="Details">
                         <field name="reference" readonly='True' ></field>
-                        <field name="patient_id" widget='selection'></field>
-                        <field name="date_appointment" ></field>
-                        <field name="note" ></field>
+                        <group>
+                            <field readonly="state != 'draft'" name="patient_id" widget='selection'></field>
+                            <field readonly="state != 'draft'" name="date_appointment" ></field>
+                            <field readonly="state != 'draft'" name="note" ></field>
+                            
+                        </group>
                     </group>
                 
                 </sheet>

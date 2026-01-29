@@ -6,10 +6,11 @@
         <field name="model">hospital.patient</field>
         <field name="arch" type="xml">
             <list >
-                <field name="name"></field>
+                <field name="name" widget="my_text"></field>
                 <field name="date_of_birth" optional="hide"></field>
                 <field name="gender" optional="hide"></field>
                 <field name="age" optional="hide"></field>
+                <field name="single" widget="late_boolean"></field>
                 
 
 
@@ -31,7 +32,7 @@
                 <sheet>
                     <group name="name" string="string">
                         <group>
-                            <field name="name"></field>
+                            <field name="name" widget="new_text"></field>
                             <field name="date_of_birth"></field>
 
                         </group>
@@ -39,6 +40,7 @@
 
                             <field name="age"></field>
                             <field name="gender"></field>
+                            <field name="single" widget="late_boolean"></field>
                         </group>
                     </group>
 
@@ -83,4 +85,9 @@
         </field>
     </record>
 
+    <record id="action_odo_owl" model="ir.actions.client">
+        <field name="name">todoList</field>
+        <field name="tag">om_hospital.todo_list</field>
+        
+    </record>
 </odoo>

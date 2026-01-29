@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml-stylesheet type="text/css" href="https://cdn.jsdelivr.net"?> -->
+
+    <templates xml:space="preserved">
+        <t t-name="om_hospital.TodoList" owl="1">
+            <div class="vh-100 d-flex justify-content-center align-items-center">
+                <button>+</button>
+                <input type="text" name="" />
+                <!-- <p t-esc="state.value" /> -->
+            
+            </div>
+
+        </t>
+        
+    </templates>
+
