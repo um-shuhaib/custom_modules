@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- <?xml-stylesheet type="text/css" href="https://cdn.jsdelivr.net"?> -->
 
-    <templates xml:space="preserved">
-        <t t-name="owl_module.TodoList" owl="1">
-            <!-- <div class="vh-100 d-flex flex-column justify-content-center align-items-center p-5 bg-dark">
+<templates xml:space="preserved">
+    <t t-name="owl_module.TodoList" owl="1">
+        <!-- <div class="vh-100 d-flex flex-column justify-content-center align-items-center p-5 bg-dark">
                 <h1 class="text-center text-light">COUNTER</h1>
                 <div class="bg-secondary d-flex justify-content-center align-items-center">
                     <button t-on-click="decrement"  class="btn btn-danger m-3"> - </button>
@@ -13,19 +13,87 @@
             
             </div> -->
 
-            <div class="row d-flex ">
-                <div class="p-5 vh-100 col-2 bg-primary">
-                    <ol>
-                        <t t-foreach="state.categories" t-as="category" t-key="category.id">
-                            <li t-esc="category.name"></li>
-                        </t>
-                    </ol>
-                </div>
-                <div class="vh-100 col-5 bg-secondary"></div>
-                <div class="vh-100 col-5 bg-light"></div>
+
+        <!-- categories list  -->
+        <div class="row d-flex ">
+            <div class="p-5 vh-100 col-2 bg-primary">
+                <ol class="d-flex flex-column justify-content-center ">
+                    <t t-foreach="state.categories" t-as="category" t-key="category.id">
+                        <a href="#" class="text-decoration-none"
+                            t-on-click.prevent="()=> this.selectCategory(category.id,category.name)">
+                            <li class="list-unstyled m-2 fw-bold text-light" t-esc="category.name"></li>
+                        </a>
+                    </t>
+                </ol>
             </div>
 
-        </t>
-        
-    </templates>
+            <!-- product list  -->
 
+            <!-- style="overflow-y: auto;" -->
+            <div class="p-2 col-5 bg-secondary d-flex flex-column align-items-center">
+
+                <h2 t-esc="state.activeCatName" class="text-primary"></h2>
+
+
+                <!-- <ul class="  d-flex flex-column justify-content-center"> -->
+                <div class="bg-light d-flex justify-content-center" style="min-width: 500px;"> 
+                    <div class="row bg-light m-0" style="min-width: 500px;">
+                        <t t-foreach="state.products" t-as="product" t-key="product.id">
+                            <div class="border rounded shadow col-6 d-flex flex-column justify-content-center align-items-center p-4">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <p class="m-2 fw-bold text-dark text-center" t-esc="product.name"></p>
+                                </div>
+                                <div>
+                                    <p class=" m-2 fw-bold text-dark">On Hand:
+                                        <t t-esc="product.qty_available" />
+                                    </p>
+                                    <button class="btn btn-warning">Add To Cart</button>
+                                </div>
+                            </div>
+
+                        </t>
+                    </div>
+                </div>
+
+                <!-- </ul> -->
+                <!-- pagination  -->
+
+
+                <div>
+                    <button class="btn" t-on-click="prePage" t-att-disabled="state.page==1">Back</button>
+                    <span> Page
+                        <t t-esc="state.page" />
+                    </span>
+                    <button class="btn" t-on-click="nextPage"
+                        t-att-disabled="state.page * state.limit >= state.total">Next</button>
+                </div>
+
+            </div>
+
+            <!-- new section  -->
+            <div class="vh-100 col-5 bg-light">
+                
+                <div class="vh-100 d-flex flex-column justify-content-center align-items-center p-5 bg-dark">
+                <h1 class="text-center text-light">COUNTER</h1>
+                <div class="bg-secondary d-flex justify-content-center align-items-center">
+                    <button t-on-click="decrement"  class="btn btn-danger m-3"> - </button>
+                    <input type="text" t-att-value="state.value" class="form-control w-50" />
+                    <button t-on-click="increment" class="btn btn-success m-3"> + </button>
+                </div>
+            
+            </div>
+
+            </div>
+        </div>
+
+
+        <!-- footer  -->
+        <div class="vw-100 bg-primary">
+            <p class="text-light text-center"> odoo </p>
+
+
+        </div>
+
+    </t>
+
+</templates>

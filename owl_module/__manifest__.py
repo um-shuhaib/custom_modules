@@ -14,7 +14,7 @@
             
         ]
     },
-    # "depends": [],
+    "depends": ['base','stock'],
     "data": [
         "security/ir.model.access.csv",
         "views/owl_view.xml",
