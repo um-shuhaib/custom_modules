@@ -4,7 +4,7 @@ import datetime
 
 class DriversDetails(models.Model):
     _name="driver.user"
-    _rec_name='age'
+    _rec_name='name'
     _description="Drivers full details"
 
     name=fields.Char(string="Name",required=True)
@@ -16,7 +16,7 @@ class DriversDetails(models.Model):
     vehicle_no=fields.Char(string="Vehicle No")
     licence_no=fields.Char(string="Licence No")
     bdate=fields.Date(string="Date Of Birth")
-    Gender=fields.Selection([("male","male"),("female","female")],string="Gender")
+    gender=fields.Selection([("male","male"),("female","female")],string="Gender")
     height=fields.Float(string="Height")
     single=fields.Boolean(string="Single",default=True)
     joined=fields.Datetime(string="Joined date and time")

@@ -41,6 +41,13 @@
         action="action_female_view"
         />
 
+    <menuitem
+        id="kanban_menu"
+        name="Kanban View"
+        parent="driver_menu"
+        action="driver_manager.test_kanban_action"
+        />
+
 
 
 </odoo>

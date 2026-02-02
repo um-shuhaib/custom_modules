@@ -1,1 +1,1 @@
-from . import driver,salesOrder
+from . import driver,salesOrder,kanbanModel
