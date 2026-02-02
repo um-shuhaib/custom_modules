@@ -4,12 +4,12 @@ import datetime
 
 class DriversDetails(models.Model):
     _name="driver.user"
-
+    _rec_name='age'
     _description="Drivers full details"
 
     name=fields.Char(string="Name",required=True)
     place=fields.Char(string="Place")
-    age=fields.Char(string="Age",compute="_get_user_age",required=True)
+    age=fields.Integer(string="Age",compute="_get_user_age",required=True , store=True)
     address=fields.Text(string="Address")
     email=fields.Char(string="Email Id")
     phone=fields.Integer(string="Phone")
@@ -31,6 +31,6 @@ class DriversDetails(models.Model):
                 age=str(int((today-bdate).days/365))        
                 driver.age=age
             else:
-                driver.age="not provided"
+                driver.age=0
 
     

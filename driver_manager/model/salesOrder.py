@@ -9,7 +9,7 @@ class Salesorder(models.Model):
 
 
     @api.onchange('partner_id')
-    def _edit_cus_contact_saleOrder(self):
+    def _onchange_partner_id(self):
         if self.partner_id:
             self.contact=self.partner_id.phone
         
