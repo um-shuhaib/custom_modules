@@ -43,24 +43,25 @@
         <field name="name">test.kanban.view.kanban</field>
         <field name="model">test.kanban</field>
         <field name="arch" type="xml">
-            <kanban>
+            <kanban class="o_kanban_mobile" sample="1" quick_create="false">
+                <!-- <progressbar field="activity_state" col                               00ors='{"planned":"success","today":"warning","overdue":"danger"}'/> -->
                 <templates>
                     <!-- <t t-name="kanban-box"> -->
                     <t t-name="card">
-                    <div>
-                        <field name="name" />
-                        <field name="date_order" class="ms-1"/>
+                    <div class="p-3 d-flex ">
+                        <field  name="name" /> 
+                        <field name="state" widget="label_selection"  options="{'classes':{'draft':'info','done':'primary','in-progress':'success'}}" class='ms-auto' /> <br/>
                     </div>
-                    <footer>
+                    <div class="p-3 d-flex">
+
+                        <field  name="date_order" />
+                    </div>
+                    <footer class="p-3 d-flex justify-content-center align-items-center">
                         <div>
                             <field name="description" />
                             
                         </div>
-                        <div>
-                            <!-- <field name="state" /> -->
-                            <field name="state" widget="label_selection"  options="{'classes':{'draft':'info','done':'primary','in-progress':'success'}}" class='ms-auto' />
-
-                        </div>
+                        
                     </footer>
                         
                     </t>

@@ -1,7 +1,7 @@
-# from odoo import fields, models
+from odoo import fields, models
 
-# class Salesorder(models.Model):
-#     _inherit="sale.order.line"
+class Salesorder(models.Model):
+    _inherit="sale.order.line"
 
-#     barcode=fields.Char(string="Barcode")
+    barcode=fields.Char(string="Barcode")
    

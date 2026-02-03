@@ -19,6 +19,7 @@
     "data": [
         "security/ir.model.access.csv",
         "data/sequence.xml",
+        "views/customProductLineView.xml",
         "views/appoinment_view.xml",
         "views/patient_readonly_view.xml",
         "views/patient_view.xml",

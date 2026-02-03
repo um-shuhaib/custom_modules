@@ -1,1 +1,1 @@
-from . import patient,appointment,product_line,widgets
+from . import patient,appointment,product_line,widgets,customSale

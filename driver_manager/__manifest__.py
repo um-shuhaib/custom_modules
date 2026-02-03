@@ -8,7 +8,7 @@
     "category": "Transportation",
     "website": "https://www.driverManage.com",
     "depends": [
-        "sale_management"
+        "sale_management","mail"
         ],
     "data": [
         "security/ir.model.access.csv",
