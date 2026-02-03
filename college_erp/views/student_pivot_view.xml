@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+    <record id="student_student_view_tree" model="ir.ui.view">
+        <field name="name">student_student.view.list</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="student_id" />
+                <field name="subject" />
+                <field name="date" />
+                <field name="status" />
+                <field name="mark" />
+                
+            </list>
+        </field>
+    </record>
+
+    <record id="student_student_view_form" model="ir.ui.view">
+        <field name="name">student_student.view.form</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="student_id" />
+                        <field name="subject" />
+                        <field name="date" />
+                        <field name="status" />
+                        <field name="mark" />
+                        
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="student_student_view_pivot" model="ir.ui.view">
+        <field name="name">student_student.view.pivot</field>
+        <field name="model">student.student</field>
+        <field name="arch" type="xml">
+            <pivot disable_linking="true">
+                <field name="student_id" type="row" />
+                <field name="subject" type="col" />
+                <field name="status" type="col" />
+                <field name="mark" type="measure" />
+                
+            </pivot>
+        </field>
+    </record>
+
+    
+
+    <record id="student_student_action" model="ir.actions.act_window">
+        <field name="name">Mark Sheet</field>
+        <field name="res_model">student.student</field>
+        <field name="view_mode">list,form,pivot</field>
+    </record>
+
+</odoo>

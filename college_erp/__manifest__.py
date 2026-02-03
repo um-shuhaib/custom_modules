@@ -7,9 +7,11 @@
     "author": "tecfuge",
     "website": "https://www.tecfuge.com",
     "license": "LGPL-3",
-    "depends": ["base"],
+    "depends": ["base","mail"],
     "data": [
         "security/ir.model.access.csv",
+        "views/student_details_view.xml",
+        "views/student_pivot_view.xml",
         "views/course_views.xml",
         "views/academy_menu.xml",
        
