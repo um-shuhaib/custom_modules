@@ -50,4 +50,21 @@
 
 
 
+
+
+
+    
+    
+
+    <menuitem
+        id="menu_sales_xslx_report"
+        name="Sales Quotation XSLX"
+        action="action_sales_xlsx_wizard"
+        parent="sale.menu_sale_report"
+        sequence="10"/>
+
+
+
+
+
 </odoo>

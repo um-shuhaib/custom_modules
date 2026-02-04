@@ -15,6 +15,7 @@
         "views/customfields.xml",
         "views/test_kanban_view.xml",
         "views/driver_view.xml",
+        # "views/wizard_view.xml",
         "views/menu.xml",
        
     ],

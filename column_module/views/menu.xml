@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="column_model_menu"
+        name="Column"
+        sequence="10"/>
+
+    <menuitem
+        id="column_model_submenu_menu"
+        name="Sub Menu"
+        action="column_model_action"
+        parent="column_model_menu"
+        sequence="10"/>
+
+</odoo>

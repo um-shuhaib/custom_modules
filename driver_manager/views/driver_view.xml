@@ -33,22 +33,30 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group>
+                    <div class="row">
+                        <group class="col-4">
                         <field name="name"></field>
                         <field name="place"></field>
                         <field name="age"></field>
                         <field name="address"></field>
+                    </group>
+                    <group class="col-4">
                         <field name="email"></field>
                         <field name="phone"></field>
                         <field name="vehicle_no"></field>
                         <field name="licence_no"></field>
+                        
+                    </group>
+                    <group class="col-4">
                         <field name="bdate"></field>
                         <field name="gender"></field>
                         <field name="height"></field>
                         <field name="single"></field>
                         <field name="joined"></field>
                         <field name="resume"></field>
+                        
                     </group>
+                    </div>
                 </sheet>
             </form>
         </field>
