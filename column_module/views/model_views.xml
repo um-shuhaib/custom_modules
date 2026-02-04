@@ -3,17 +3,69 @@
 
 
 
-    <record id="column_model_view_tree" model="ir.ui.view">
+    <record id="column_model_view_list" model="ir.ui.view">
         <field name="name">column.model.view.list</field>
         <field name="model">column.model</field>
         <field name="arch" type="xml">
             <list>
-                <field name="name" />
-                <field name="name1" />
-                <field name="name2" />
-                <field name="name3" />
-                <field name="name4" />
-                <field name="name5" />
+                <field name="Property_name" />
+                <field name="location" />
+                <field name="types" />
+                <field name="total_unit" />
+                <field name="ownership_type" />
+                <field name="owner" />
+                <field name="unit_prefix" />
+                <field name="number_of_sequence" />
+                <field name="starting_number" />
+                <field name="country" />
+                <field name="emirates" />
+                <field name="city" />
+                <field name="street_name" />
+                <field name="google_map" />
+                <field name="building_no" />
+                <field name="year_build" />
+                <field name="total_floor" />
+                <field name="total_parking" />
+
+                <field name="number_of_gate" />
+                <field name="total_area" />
+                <field name="land_area" />
+                <field name="property_market_value" />
+                <field name="annuel_service_charge" />
+                <field name="insurance_policy_number" />
+                <field name="management_fees" />
+                <field name="vat" />
+                <field name="insurance_renewal_date" />
+                <field name="electricity_number" />
+                <field name="water_number" />
+                <field name="gas_supply_available" />
+                <field name="bank" />
+                <field name="bank_account" />
+                <field name="account_holder" />
+
+                <field name="gym" />
+                <field name="parking" />
+                <field name="access_control" />
+                <field name="swimming_pool" />
+                <field name="security" />
+                <field name="retail_area" />
+                <field name="kid_play_area" />
+                <field name="cctv" />
+                <field name="park_garden" />
+
+                <field name="rera_ejary_property_code" />
+                <field name="municiple_reg_no" />
+                <field name="barcode" />
+
+                <field name="title_deed_attachment_ids" />
+                <field name="site_master_plan_attachment_ids" />
+                <field name="property_layout_attachment_ids" />
+                <field name="mep_drawing_attachment_ids" />
+                <field name="fire_safety_attachment_ids" />
+                <field name="insurence_attachment_ids" />
+
+
+
 
             </list>
         </field>
@@ -24,28 +76,170 @@
         <field name="name">column.model.view.form</field>
         <field name="model">column.model</field>
         <field name="arch" type="xml">
-            <form string="">
+            <form string="Property Master">
                 <sheet>
-                    <div class="row">
+                    <div class="row border border-secondary p-2">
+                        <p class="fw-bold m-0">SECTION</p>
+                        <hr />
                         <div class="d-flex flex-column col-4">
                             <group>
-                                <field name="name" />
-                                <field name="name1" />
+                                <field name="Property_name" />
+                                <field name="total_unit" />
+                                <field name="unit_prefix" />
+                                <field name="country" />
+                                <field name="street_name" />
+                                <field name="year_build" />
+
+
+
                             </group>
 
                         </div>
                         <div class="d-flex flex-column col-4">
                             <group>
-                                <field name="name2" />
-                                <field name="name3" />
+                                <field name="location" />
+                                <field name="ownership_type" />
+                                <field name="number_of_sequence" />
+                                <field name="emirates" />
+                                <field name="google_map" />
+                                <field name="total_floor" />
+
+
                             </group>
 
 
                         </div>
                         <div class="d-flex flex-column col-4">
                             <group>
-                                <field name="name4" />
-                                <field name="name5" />
+                                <field name="types" />
+                                <field name="owner" />
+                                <field name="starting_number" />
+                                <field name="city" />
+                                <field name="building_no" />
+                                <field name="total_parking" />
+
+
+                            </group>
+
+                        </div>
+
+
+
+                    </div>
+
+
+                    <div class="row mt-1 border border-secondary p-2">
+                        <p class="fw-bold m-0">SECTION</p>
+                        <hr />
+                        <div class="d-flex flex-column col-4">
+                            <group>
+
+                                <field name="number_of_gate" />
+                                <field name="property_market_value" />
+                                <field name="management_fees" />
+                                <field name="electricity_number" />
+                                <field name="bank" />
+
+
+                            </group>
+
+                        </div>
+                        <div class="d-flex flex-column col-4">
+                            <group>
+
+                                <field name="total_area" />
+                                <field name="annuel_service_charge" />
+                                <field name="vat" />
+                                <field name="water_number" />
+                                <field name="bank_account" />
+
+                            </group>
+
+
+                        </div>
+                        <div class="d-flex flex-column col-4">
+                            <group>
+
+                                <field name="land_area" />
+                                <field name="insurance_policy_number" />
+                                <field name="insurance_renewal_date" />
+                                <field name="gas_supply_available" />
+                                <field name="account_holder" />
+
+                            </group>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="row mt-1 border border-secondary p-2">
+                        <p class="fw-bold m-0">SECTION</p>
+                        <hr />
+                        <div class="p-3" >
+                            <div class="row p-2 bg-success rounded-2">
+                                <p class="fw-bold text-center text-light h3">Amenities &amp; Facilities</p>
+                                <div class="col-4">
+                                    <group>
+                                        <field class="text-light" name="gym" />
+                                        <field class="text-light" name="parking" />
+                                        <field class="text-light" name="access_control" />
+                                    </group>
+
+                                </div>
+                                <div class="col-4">
+                                    <group>
+                                        <field class="text-light" name="swimming_pool" />
+                                        <field class="text-light" name="security" />
+                                        <field class="text-light" name="retail_area" />
+                                    </group>
+
+                                </div>
+                                <div class="col-4">
+                                    <group>
+                                        <field class="text-light" name="kid_play_area" />
+                                        <field class="text-light" name="cctv" />
+                                        <field class="text-light" name="park_garden" />
+                                    </group>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column col-4">
+                            <group>
+
+
+
+                                <field name="rera_ejary_property_code" />
+                                <field name="title_deed_attachment_ids" widget="many2many_binary" />
+                                <field name="mep_drawing_attachment_ids" widget="many2many_binary" />
+
+
+                            </group>
+
+                        </div>
+                        <div class="d-flex flex-column col-4">
+                            <group>
+
+
+
+                                <field name="municiple_reg_no" />
+                                <field name="site_master_plan_attachment_ids" widget="many2many_binary" />
+                                <field name="fire_safety_attachment_ids" widget="many2many_binary" />
+
+                            </group>
+
+
+                        </div>
+                        <div class="d-flex flex-column col-4">
+                            <group>
+
+
+
+                                <field name="barcode" />
+                                <field name="property_layout_attachment_ids" widget="many2many_binary" />
+                                <field name="insurence_attachment_ids" widget="many2many_binary" />
+
                             </group>
 
                         </div>
@@ -59,7 +253,7 @@
 
     <record id="column_model_action" model="ir.actions.act_window">
         <field name="name">Column View</field>
-        <field name="res_model">column.model</field>
+        <field name="res_model">property.model</field>
         <field name="view_mode">list,form</field>
     </record>
 
