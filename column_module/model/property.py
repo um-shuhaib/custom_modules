@@ -1,7 +1,7 @@
 from odoo import fields, models
 
 
-class ColumnModel(models.Model):
+class PropertyModel(models.Model):
     _name = 'property.model'
 
     Property_name = fields.Char(string="Property Name")

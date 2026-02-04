@@ -15,7 +15,8 @@
     #     ],
     "data": [
         "security/ir.model.access.csv",
-        "views/model_views.xml",
+        "views/property_model_views.xml",
+        "views/block_model_views.xml",
         "views/menu.xml",
         
         
