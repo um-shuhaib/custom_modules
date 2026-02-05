@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="unit_model_view_list" model="ir.ui.view">
+        <field name="name">unit.model.view.tree</field>
+        <field name="model">unit.model</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="property_id" />
+                <field name="block_id" />
+                <field name="unit_subtype_id" />
+
+                <field name="unit_code" />
+                <field name="floor" />
+                <field name="furnishing_status" />
+
+                <field name="unit_number" />
+                <field name="unit_type_id" />
+                <field name="under_maintenence" />
+
+
+                <field name="unit_size_sq_sq_ft" />
+                <field name="monthly_rent" />
+
+                <field name="unit_size_sq_sq_mt" />
+                <field name="minimum_rent" />
+
+                <field name="annuel_rent" />
+                <field name="total_parking" />
+
+                <field name="number_of_bedroom" />
+                <field name="facing_direction" />
+
+                <field name="number_of_bathroom" />
+                <field name="number_of_free_parking" />
+
+                <field name="balcony" />
+                <field name="parking_slot" />
+
+                <field name="gym" />
+                <field name="parking" />
+                <field name="access_control" />
+
+                <field name="document_ids" />
+                <field name="document2_ids" />
+                <field name="swimming_pool" />
+
+                <field name="security" />
+                <field name="retail_area" />
+                <field name="expiry_date" />
+
+                <field name="expiry_date2" />
+                <field name="kid_play_area" />
+                <field name="cctv" />
+                <field name="park_garden" />
+
+            </list>
+        </field>
+    </record>
+
+
+    <record id="unit_model_view_form" model="ir.ui.view">
+        <field name="name">unit.model.view.form</field>
+        <field name="model">unit.model</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <div class="p-3">
+                        <div class="row p-2 border border-secondary">
+                            <p class="fw-bold m-0">PROPERTY</p>
+                            <hr />
+                            <div class="col-4">
+                                <group>
+                                    <field name="property_id" />
+                                    <field name="block_id" />
+                                    <field name="unit_subtype_id" />
+                                </group>
+
+                            </div>
+                            <div class="col-4">
+                                <group>
+                                    <field name="unit_code" />
+                                    <field name="floor" />
+                                    <field name="furnishing_status" />
+
+                                </group>
+
+                            </div>
+                            <div class="col-4">
+                                <group>
+                                    <field name="unit_number" />
+                                    <field name="unit_type_id" />
+                                    <field name="under_maintenence" />
+                                </group>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="p-3">
+                        <div class="row p-2 border border-secondary">
+                            <p class="fw-bold m-0">UNIT</p>
+                            <hr />
+                            <div class="col-4">
+                                <group>
+                                    <field name="unit_size_sq_sq_ft" />
+                                    <field name="monthly_rent" />
+                                </group>
+
+                            </div>
+                            <div class="col-4">
+                                <group>
+                                    <field name="unit_size_sq_sq_mt" />
+                                    <field name="minimum_rent" />
+
+                                </group>
+
+                            </div>
+                            <div class="col-4">
+                                <group>
+                                    <field name="annuel_rent" />
+                                    <field name="total_parking" />
+                                </group>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="p-3">
+                        <div class="row p-2 border border-secondary">
+                            <p class="fw-bold m-0">ROOM</p>
+                            <hr />
+                            <div class="col-4">
+                                <group>
+                                    <field name="number_of_bedroom" />
+                                    <field name="facing_direction" />
+                                </group>
+
+                            </div>
+                            <div class="col-4">
+                                <group>
+                                    <field name="number_of_bathroom" />
+                                    <field name="number_of_free_parking" />
+
+                                </group>
+
+                            </div>
+                            <div class="col-4">
+                                <group>
+                                    <field name="balcony" />
+                                    <field name="parking_slot" />
+                                </group>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="p-3">
+                        <div class="p-3 ">
+                            <div class="row p-2 bg-success rounded-2 border border-secondary">
+                                <p class="fw-bold m-0 text-light text-center">AMENITIES &amp; FACILITIES</p>
+                                <hr />
+                                <div class="col-4">
+                                    <group>
+                                        <field name="gym" />
+                                        <field name="parking" />
+                                        <field name="access_control" />
+                                    </group>
+
+                                </div>
+                                <div class="col-4">
+                                    <group>
+
+                                        <field name="swimming_pool" />
+                                        <field name="security" />
+                                        <field name="retail_area" />
+
+                                    </group>
+
+                                </div>
+                                <div class="col-4">
+                                    <group>
+                                        <field name="kid_play_area" />
+                                        <field name="cctv" />
+                                        <field name="park_garden" />
+                                    </group>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="p-3">
+                        <div class="row p-2 border border-secondary">
+                            <p class="fw-bold m-0">DOCUMENT</p>
+                            <hr />
+                            <div class="col-4">
+                                <group>
+                                    <field name="document_ids"  widget="many2many_binary"/>
+                                    <field name="document2_ids" widget="many2many_binary" />
+                                </group>
+
+                            </div>
+                            <div class="col-4">
+                                <group>
+                                    <field name="expiry_date" />
+                                    <field name="expiry_date2" />
+
+                                </group>
+
+                            </div>
+                            <div class="col-4">
+                                <group>
+
+                                </group>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="unit_model_action" model="ir.actions.act_window">
+        <field name="name">Unit View</field>
+        <field name="res_model">unit.model</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+</odoo>

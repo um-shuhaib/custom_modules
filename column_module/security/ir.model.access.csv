@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_property_model,access.property.model,model_property_model,base.group_user,1,1,1,1
 access_block_model,access.block.model,model_block_model,base.group_user,1,1,1,1
+access_unit_model,access.unit.model,model_unit_model,base.group_user,1,1,1,1

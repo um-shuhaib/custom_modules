@@ -19,5 +19,12 @@
         action="block_model_action"
         parent="column_model_menu"
         sequence="10"/>
+   
+    <menuitem
+        id="unit_model_menu"
+        name="Unit"
+        action="unit_model_action"
+        parent="column_model_menu"
+        sequence="10"/>
 
 </odoo>

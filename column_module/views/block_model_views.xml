@@ -23,7 +23,7 @@
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
-                    <div>
+                    <div class="p-3 border border-secondary">
                         <p class="fw-bold m-0">BLOCK DETAILS</p>
                         <hr/>
                         <div class="row p-3">

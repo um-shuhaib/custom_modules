@@ -3,6 +3,7 @@ from odoo import fields, models
 
 class PropertyModel(models.Model):
     _name = 'property.model'
+    _rec_name = 'Property_name'
 
     Property_name = fields.Char(string="Property Name")
     location = fields.Char(string="Location")
